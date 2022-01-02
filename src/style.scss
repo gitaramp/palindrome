@@ -1,5 +1,11 @@
-#app {
-  font-size: 18px;
-  font-family: "Roboto", sans-serif;
-  color: blue;
+.user-input {
+  &__output-message {
+    font-size: 15px;
+    &--green {
+      color: green;
+    }
+    &--red {
+      color: red;
+    }
+  }
 }

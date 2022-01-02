@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    {{ message }}
+    <UserInput />
   </div>
 </template>
 
 <script>
+import UserInput from "./UserInput.vue";
+
 export default {
-  data() {
-    return {
-      message: "Hello World",
-    };
+  name: "App",
+  components: {
+    UserInput,
   },
 };
 </script>
