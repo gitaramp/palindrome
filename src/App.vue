@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <UserInput
       :allPalindromes="allPalindromes"
       @savePalindrome="savePalindrome"

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+$border-color: #f0f0f0;
 $success-color: #24a344;
 $danger-color: #d83146;
 
@@ -16,15 +17,21 @@ $danger-color: #d83146;
   background: $color;
 }
 
-#app {
+.app {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+
+  @media (min-width: 980px) {
+    display: flex;
+  }
 }
 
 .user-input {
   @include border-gray;
   width: 230px;
   height: 130px;
+  margin-right: 50px;
+  margin-bottom: 30px;
 
   &__input {
     @include border-gray;
@@ -49,7 +56,27 @@ $danger-color: #d83146;
   }
 }
 
-.palindrome-list[title]::before {
-  content: attr(title);
-  font-weight: bold;
+.palindrome-list {
+  width: 190px;
+  margin: 0;
+  padding: 0;
+
+  &[title]::before {
+    @include border-gray;
+    content: attr(title);
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: #464646;
+    width: 100%;
+  }
+  li {
+    border-bottom: 2px solid $border-color;
+    border-left: 2px solid $border-color;
+    border-right: 2px solid $border-color;
+    border-radius: 4px;
+    padding: 10px 20px;
+    width: 100%;
+    list-style: none;
+  }
 }
