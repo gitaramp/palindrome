@@ -1,11 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$success-color: #24a344;
+$danger-color: #d83146;
+
+@mixin border-gray {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+}
+
+@mixin output-message-border($color) {
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 3px;
+  border: 8px solid $color;
+  background: $color;
+}
+
+#app {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
 .user-input {
+  @include border-gray;
+  width: 230px;
+  height: 130px;
+
+  &__input {
+    @include border-gray;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;
+  }
+
   &__output-message {
-    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 25px;
+    color: #555;
+
     &--green {
-      color: green;
+      @include output-message-border($success-color);
     }
     &--red {
-      color: red;
+      @include output-message-border($danger-color);
     }
   }
 }
