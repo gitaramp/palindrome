@@ -1,7 +1,13 @@
 <template>
   <div class="user-input">
-    <input type="text" id="user-input" name="userInput" v-model="userInput" />
-    <div v-show="userInput">
+    <input
+      type="text"
+      class="user-input__input"
+      id="user-input"
+      name="userInput"
+      v-model="userInput"
+    />
+    <div v-show="userInput" class="user-input__output-message">
       <p v-if="isPalindrome">
         "{{ userInput }}"
         <span class="user-input__output-message--green">is</span> palindrom!
@@ -25,14 +31,19 @@ export default {
   },
   computed: {
     isPalindrome() {
-      return this.userInput.length >= 3
-        ? this.userInput === this.userInput.split("").reverse().join("")
+      const convertedInput = this.userInput.split(" ").join("").toLowerCase();
+      return convertedInput.length >= 3
+        ? convertedInput ===
+            convertedInput.toLowerCase().split("").reverse().join("")
         : false;
     },
   },
   watch: {
     isPalindrome(value) {
-      if (value && !this.allPalindromes.includes(this.userInput)) {
+      if (
+        value &&
+        !this.allPalindromes.includes(this.userInput.toLowerCase())
+      ) {
         this.$emit("savePalindrome", this.userInput);
       }
     },
