@@ -24,7 +24,7 @@ export default {
     };
   },
   mounted() {
-    this.allPalindromes = JSON.parse(localStorage.getItem("palindromes") || []);
+    this.allPalindromes = JSON.parse(localStorage.getItem("palindromes")) || [];
   },
   methods: {
     savePalindrome(newPalindrome) {
