@@ -10,6 +10,9 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "IE 10"
+  ],
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
