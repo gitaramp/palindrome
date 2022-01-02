@@ -9,3 +9,8 @@
     }
   }
 }
+
+.palindrome-list[title]::before {
+  content: attr(title);
+  font-weight: bold;
+}

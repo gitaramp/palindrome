@@ -17,6 +17,7 @@
 <script>
 export default {
   name: "UserInput",
+  props: ["allPalindromes"],
   data() {
     return {
       userInput: "",
@@ -24,7 +25,16 @@ export default {
   },
   computed: {
     isPalindrome() {
-      return this.userInput === this.userInput.split("").reverse().join("");
+      return this.userInput.length >= 3
+        ? this.userInput === this.userInput.split("").reverse().join("")
+        : false;
+    },
+  },
+  watch: {
+    isPalindrome(value) {
+      if (value && !this.allPalindromes.includes(this.userInput)) {
+        this.$emit("savePalindrome", this.userInput);
+      }
     },
   },
 };
